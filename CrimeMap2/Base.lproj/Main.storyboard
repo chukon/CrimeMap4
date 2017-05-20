@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CrimeMap2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyX-mV-eA5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Rockford Crime Map" id="6Zr-Iy-k7g"/>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HTd-tI-nYv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5Ee-kx-fQl"/>
+                                </connections>
+                            </mapView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="ufl-FQ-N1V">
+                                <rect key="frame" x="-2" y="637" width="379" height="31"/>
+                                <connections>
+                                    <action selector="DateSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="qg4-CP-fRb"/>
+                                    <action selector="DateSliderUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SWZ-8i-6D6"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 24 Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-jz-h8H">
+                                <rect key="frame" x="8" y="618" width="136" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="NJz-Uv-c7e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHA-Qk-mto">
+                                <rect key="frame" x="195" y="618" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WyX-mV-eA5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Af5-hF-iDR"/>
+                            <constraint firstItem="WyX-mV-eA5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AoK-5Q-bNO"/>
+                            <constraint firstItem="HTd-tI-nYv" firstAttribute="top" secondItem="WyX-mV-eA5" secondAttribute="bottom" id="RZe-4b-S46"/>
+                            <constraint firstItem="HTd-tI-nYv" firstAttribute="leading" secondItem="ufl-FQ-N1V" secondAttribute="leading" id="TBQ-xT-YO8"/>
+                            <constraint firstItem="ufl-FQ-N1V" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="YVd-iN-Ie3"/>
+                            <constraint firstItem="2Zu-jz-h8H" firstAttribute="top" secondItem="HTd-tI-nYv" secondAttribute="bottom" constant="8" symbolic="YES" id="Zda-vC-mGy"/>
+                            <constraint firstItem="rHA-Qk-mto" firstAttribute="leading" secondItem="2Zu-jz-h8H" secondAttribute="trailing" constant="51" id="gBy-Lg-YGl"/>
+                            <constraint firstItem="ufl-FQ-N1V" firstAttribute="top" secondItem="HTd-tI-nYv" secondAttribute="bottom" constant="27" id="iX7-il-UM8"/>
+                            <constraint firstItem="2Zu-jz-h8H" firstAttribute="baseline" secondItem="rHA-Qk-mto" secondAttribute="baseline" id="iwH-U6-x99"/>
+                            <constraint firstItem="HTd-tI-nYv" firstAttribute="trailing" secondItem="ufl-FQ-N1V" secondAttribute="trailing" id="jAR-Sj-LNQ"/>
+                            <constraint firstItem="rHA-Qk-mto" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nv1-m8-OdA"/>
+                            <constraint firstItem="WyX-mV-eA5" firstAttribute="leading" secondItem="HTd-tI-nYv" secondAttribute="leading" id="qX2-U4-Rjm"/>
+                            <constraint firstAttribute="trailing" secondItem="WyX-mV-eA5" secondAttribute="trailing" id="rDJ-fM-eQX"/>
+                            <constraint firstItem="WyX-mV-eA5" firstAttribute="trailing" secondItem="HTd-tI-nYv" secondAttribute="trailing" id="sks-DH-oIN"/>
+                            <constraint firstItem="2Zu-jz-h8H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="wlO-Kl-wd6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblCrimeRange" destination="2Zu-jz-h8H" id="2sX-05-vK7"/>
+                        <outlet property="lblcount" destination="rHA-Qk-mto" id="Jf8-wf-9TU"/>
+                        <outlet property="mapView" destination="HTd-tI-nYv" id="niv-WV-mfX"/>
+                        <outlet property="navigationBar" destination="WyX-mV-eA5" id="TRB-lT-FbD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
